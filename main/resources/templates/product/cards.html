@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  </head>
+  <style>
+  body{
+  background-image: url('https://i.pinimg.com/originals/88/15/63/881563d6444b370fa4ceea0c3183bb4c.gif');
+  }
+  	.grid{
+  		grid-gap:30px;
+  	}
+  	.card-body{
+  		background-color:aqua;
+  		border: 10px solid white;
+  	}
+  	.img{
+  	 border:20px solid white;
+  	 height:150px;
+  	 width:100%;
+  	}
+  	.close:hover{
+  	background-color:red;
+  	}
+  	.container-fluid{
+  	margin-left:50px;
+  	}
+ 	 
+  </style>
+  <body class="bg bg-info">
+  
+  
+  	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+		<div class="container-fluid">
+	<div class="text-center"> <h1>Cards</h1> </div>
+		</div>
+		<a type="button" class="btn-close close" aria-label="Close" href="/product/"></a>
+	</nav><br>
+  
+	<div class="container-fluid ">
+	
+		<div class="cards">
+  <div class="row row-cols-4 grid">
+  	<div class="card" style="width: 18rem;" th:each="product : *{product}">
+  <img src="..." th:src="@{'/images/' + *{product.imageFileName}}" class="card-img-top img" alt="...">
+  <div class="card-body">
+  
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item"><b>Brand: </b><span th:text="*{product.brand}"></span></li>
+  <li class="list-group-item"><b>Category: </b><span th:text="*{product.category}"></span></li>
+  <li class="list-group-item"><b>CreatedAt: </b><span th:text="*{product.createdAt}"></span></li>
+  <li class="list-group-item"><b>Description: </b><span th:text="*{product.description}"></span></li>
+  <li class="list-group-item"><b>Name: </b><span th:text="*{product.name}"></span></li>
+  <li class="list-group-item"><b>Price: </b><span th:text="@{${product.price} + '$'}"></span></li>
+  </ul>  <br>	
+    
+    <a href="#" class="btn btn-warning"><span class="material-symbols-outlined">shopping_cart</span>cart</a>
+    <a href="#" class="btn btn-danger"> Buy</a>   
+  </div>
+</div>
+  </div>
+</div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

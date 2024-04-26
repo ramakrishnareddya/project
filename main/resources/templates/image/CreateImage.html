@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Mart</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="col-md-8 mx-auto rounded border p-4 m-4">
+                <h2 class="text-center mb-5">New Product</h2>
+                <form method="post" enctype="multipart/form-data" th:object="${imgDto}">
+                    
+                    
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Image</label>
+                        <div class="col-sm-8">
+                        <input class="form-control" type="file" th:field="${imgDto.imageFileName}">
+                        <p th:if="${#fields.hasErrors('imageFileName')}" th:errorclass="text-danger"
+                        th:errors="${imgDto.imageFileName}"></p> 
+                        </div>
+                    </div>
+                                        
+                    
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Image1</label>
+                        <div class="col-sm-8">
+                        <input class="form-control" type="file" th:field="${imgDto.imageFileName1}">
+                        <p th:if="${#fields.hasErrors('imageFileName1')}" th:errorclass="text-danger"
+                        th:errors="${imgDto.imageFileName1}"></p>
+                        </div>
+                    </div>
+                                        
+                    
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Image2</label>
+                        <div class="col-sm-8">
+                        <input class="form-control" type="file" th:field="${imgDto.imageFileName2}">
+                        <p th:if="${#fields.hasErrors('imageFileName2')}" th:errorclass="text-danger"
+                        th:errors="${imgDto.imageFileName2}"></p>
+                        </div>
+                    </div>
+                                        
+                    
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Image3</label>
+                        <div class="col-sm-8">
+                        <input class="form-control" type="file" th:field="${imgDto.imageFileName3}">
+                        <p th:if="${#fields.hasErrors('imageFileName3')}" th:errorclass="text-danger"
+                        th:errors="${imgDto.imageFileName3}"></p>
+                        </div>
+                    </div>
+                  
+
+                    <div class="row">
+                        <div class="offset-sm-4 col-sm-4 d-grid">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        <div class="col-sm-4 d-grid">
+                            <a class="btn btn-outline-danger" href="/images/" role="button">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>
